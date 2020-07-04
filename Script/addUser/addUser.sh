@@ -27,7 +27,7 @@ do
     echo "$USERNAME valid, account creation in progress..."
     password=$USERNAME
     pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
-    useradd -p `mkpasswd "$pass"` -d /home/"$USERNAME" -m -g users -s /bin/bash "$USERNAME"
+    useradd -p $pass -d /home/"$USERNAME" -m -g users -s /bin/bash "$USERNAME"
     echo "this account $USERNAME is created"
     echo "folder and file creation..."
     ((count_account++))
